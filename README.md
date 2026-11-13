@@ -1,5 +1,4 @@
-# AtelierFit — Crawl4AI Cloud Integration & Product Extraction Engine
-
+# FitCheck 
 **Virtual Try-On & Size Recommendation System (Phase 1: Product URL Extraction, Crawl4AI Integration & Visual Interface)**
 
 AtelierFit is a retailer-aware product extraction and visual fashion e-commerce interface supporting **authorized Shopify stores** (via Shopify Storefront APIs + the open-source **Crawl4AI** engine), **Myntra**, and **AJIO**.
