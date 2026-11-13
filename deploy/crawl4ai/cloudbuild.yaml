@@ -1,0 +1,47 @@
+# Google Cloud Build & Cloud Run Deployment Configuration for Crawl4AI
+# Deploys the official unclecode/crawl4ai service as an independent Cloud Run container.
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/atelierfit-crawl4ai:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/atelierfit-crawl4ai:latest'
+      - './deploy/crawl4ai'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/atelierfit-crawl4ai:latest'
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'atelierfit-crawl4ai'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/atelierfit-crawl4ai:latest'
+      - '--region'
+      - '${_REGION}'
+      - '--platform'
+      - 'managed'
+      - '--port'
+      - '11235'
+      - '--memory'
+      - '2Gi'
+      - '--cpu'
+      - '2'
+      - '--concurrency'
+      - '4'
+      - '--timeout'
+      - '60s'
+      - '--no-allow-unauthenticated'
+
+substitutions:
+  _REGION: 'asia-southeast1'
+
+images:
+  - 'gcr.io/$PROJECT_ID/atelierfit-crawl4ai:latest'

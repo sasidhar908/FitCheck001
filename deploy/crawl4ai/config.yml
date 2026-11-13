@@ -1,0 +1,33 @@
+# Crawl4AI Docker Server Configuration for AtelierFit Cloud Run Service
+# Reference: https://github.com/unclecode/crawl4ai
+
+app:
+  title: "AtelierFit Crawl4AI Extraction Service"
+  version: "1.0.0"
+  host: "0.0.0.0"
+  port: 11235
+
+security:
+  enabled: true
+  jwt_enabled: false
+  api_token_env: "CRAWL4AI_API_TOKEN"
+
+crawler:
+  browser:
+    headless: true
+    browser_type: "chromium"
+    extra_args:
+      - "--no-sandbox"
+      - "--disable-setuid-sandbox"
+      - "--disable-dev-shm-usage"
+      - "--disable-gpu"
+  pool:
+    max_pages: 4
+    idle_timeout_sec: 120
+  timeouts:
+    page_timeout_ms: 25000
+    navigation_timeout_ms: 20000
+
+rate_limiting:
+  enabled: true
+  requests_per_minute: 30

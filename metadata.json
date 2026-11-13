@@ -1,0 +1,6 @@
+{
+  "name": "AtelierFit — Product Extraction & Sizing Engine",
+  "description": "Retailer-aware product URL extraction, garment measurement normalization, and visual e-commerce interface for Myntra and AJIO virtual try-on workflows.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

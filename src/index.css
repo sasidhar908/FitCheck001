@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    --bg-page: #FAF8F5;
+    --bg-surface: #FFFFFF;
+    --bg-subtle: #F3F0EA;
+    --bg-hover: #EFECE6;
+    --text-primary: #141413;
+    --text-secondary: #57534E;
+    --text-muted: #6E6A63;
+    --border-subtle: #E5E0D8;
+    --border-strong: #D6D1C7;
+    --accent-bg: #141413;
+    --accent-hover: #292826;
+    --accent-text: #FFFFFF;
+
+    --status-success-bg: #F0FDF4;
+    --status-success-text: #166534;
+    --status-success-border: rgba(22, 101, 52, 0.3);
+
+    --status-warning-bg: #FEFCE8;
+    --status-warning-text: #854D0E;
+    --status-warning-border: rgba(133, 77, 14, 0.3);
+
+    --status-error-bg: #FEF2F2;
+    --status-error-text: #991B1B;
+    --status-error-border: rgba(153, 27, 27, 0.3);
+
+    color-scheme: light;
+  }
+
+  html.dark {
+    --bg-page: #0D0E11;
+    --bg-surface: #16181D;
+    --bg-subtle: #1F2229;
+    --bg-hover: #282C35;
+    --text-primary: #F4F3EF;
+    --text-secondary: #B8B5AD;
+    --text-muted: #8C8980;
+    --border-subtle: #262932;
+    --border-strong: #363A46;
+    --accent-bg: #F4F3EF;
+    --accent-hover: #E2E0D8;
+    --accent-text: #0D0E11;
+
+    --status-success-bg: rgba(20, 83, 45, 0.28);
+    --status-success-text: #4ADE80;
+    --status-success-border: rgba(74, 222, 128, 0.35);
+
+    --status-warning-bg: rgba(113, 63, 18, 0.28);
+    --status-warning-text: #FACC15;
+    --status-warning-border: rgba(250, 204, 21, 0.35);
+
+    --status-error-bg: rgba(127, 29, 29, 0.28);
+    --status-error-text: #F87171;
+    --status-error-border: rgba(248, 113, 113, 0.35);
+
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  h1, h2, .font-serif-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
