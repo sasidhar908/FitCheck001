@@ -1,4 +1,5 @@
 # FitCheck 
+[![How it works](https://www.gitskins.com/api/badge/diagram?repo=sasidhar908/FitCheck001)](https://www.gitskins.com/sasidhar908/FitCheck001)
 **Virtual Try-On & Size Recommendation System (Phase 1: Product URL Extraction, Crawl4AI Integration & Visual Interface)**
 
 AtelierFit is a retailer-aware product extraction and visual fashion e-commerce interface supporting **authorized Shopify stores** (via Shopify Storefront APIs + the open-source **Crawl4AI** engine), **Myntra**, and **AJIO**.
